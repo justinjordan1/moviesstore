@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-suy8026r$c9nvc3_97wrv4cm1&$4+2_@*-9u@lw8wi2ae8w-u5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jjord311.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 import os
 
 
