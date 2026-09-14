@@ -59,3 +59,11 @@ def delete_review(request, id, review_id):
         user=request.user)
     review.delete()
     return redirect('movies.show', id=id)
+@login_required
+def report(request, id, review_id):
+    review = get_object_or_404(Review, id=review_id)
+    if request.user.id not in review.usersThatHaveReported:
+        review.numreports += 1
+        review.usersThatHaveReported.append(request.user.id)
+        review.save()
+    return redirect('movies.show', id=id)
